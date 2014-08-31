@@ -1,0 +1,123 @@
+@import url(https://fonts.googleapis.com/css?family=Hammersmith+One|Roboto+Slab:400,700|Source+Code+Pro:500);
+
+body {
+    background-color: #333;
+    color: #ddd;
+    font-family: "Roboto Slab", serif;
+}
+#side {
+    position: fixed;
+    top: 0;
+    bottom: 36px;
+    left: 0;
+    width: 120px;
+    overflow-y: auto;
+    background-color: #222;
+}
+#side div {
+    height: 20px;
+}
+#side div:not(.hidden) {
+    border-bottom: 1px solid #333;
+}
+#side a {
+    display: block;
+    padding: 8px 12px;
+    border-bottom: 1px solid #333;
+    font-family: "Hammersmith One", sans-serif;
+    text-align: right;
+    text-decoration: none;
+}
+#side a.current {
+    background-color: #333;
+}
+#main {
+    padding: 5px 10px 35px 130px;
+}
+#main a.top-right {
+    float: right;
+    font-family: "Hammersmith One", sans-serif;
+    font-size: 0.8em;
+    text-decoration: none;
+}
+footer {
+    position: fixed;
+    bottom: 0;
+    right: 0;
+    width: 100%;
+    padding: 12px 12px 10px 12px;
+    z-index: 1;
+    text-align: right;
+    background-color: #222;
+    font-family: "Hammersmith One", sans-serif;
+    font-size: 0.8em;
+}
+footer a {
+    text-decoration: none;
+}
+.red {
+    color: #f44;
+}
+.blue {
+    color: #55f;
+}
+.green {
+    color: #5f3;
+}
+.yellow {
+    color: #ff4;
+}
+h1, h2, h3 {
+    margin: 0;
+    color: #fff;
+    font-family: "Hammersmith One", sans-serif;
+    font-weight: normal;
+}
+h1 {
+    font-size: 2.5em;
+}
+h2 {
+    font-size: 1.8em;
+}
+a {
+    color: #7bf;
+}
+a:hover {
+    color: #9cf;
+}
+img {
+    max-width: 100%;
+}
+blockquote {
+    margin-left: 0;
+    padding-left: 10px;
+    border-left: 2px solid #888;
+    color: #888;
+}
+hr {
+    margin: 10px 0;
+    border: 0;
+    border-bottom: 1px solid white;
+}
+pre, code {
+    font-family: "Source Code Pro", monospace;
+}
+pre {
+    padding: 8px;
+    border: 1px dotted #888;
+    color: #ccc;
+    font-size: 0.8em;
+}
+pre.source {
+    white-space: pre-wrap;
+}
+code {
+    font-size: 1.1em;
+}
+table {
+    border-collapse: collapse;
+}
+td, th {
+    border: 1px solid #888;
+    padding: 5px 8px;
+}

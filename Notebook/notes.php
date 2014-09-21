@@ -1,5 +1,5 @@
 <?
-require("/var/res/php/parsedown.php");
+require_once getenv("PHPLIB") . "parsedown.php";
 $pd = new Parsedown();
 // convert filename to display name
 function dispname($file) {

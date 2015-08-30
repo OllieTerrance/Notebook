@@ -65,7 +65,4 @@ if ($loc && substr($loc, 0, strlen(getcwd())) === getcwd()) {
 </html>
 <?
 // not found
-} else {
-    http_response_code(404);
-    include("/var/www/error/404.html");
-}
+} else return http_response_code(404);

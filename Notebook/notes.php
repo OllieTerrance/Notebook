@@ -10,6 +10,9 @@ $path = explode("?", substr($_SERVER["REQUEST_URI"], 7));
 if (!$path[0]) return header("Location: index");
 if (count($path) === 1)  $path[1] = "";
 $loc = realpath($path[0] . ".md");
+// default author/footer if not set
+if (!array_key_exists("author", $GLOBALS)) $author = "";
+if (!array_key_exists("footer", $GLOBALS)) $footer = "";
 // must be within current (root) directory
 if ($loc && substr($loc, 0, strlen(getcwd())) === getcwd()) {
     $file = file_get_contents($loc);
@@ -26,10 +29,21 @@ if ($loc && substr($loc, 0, strlen(getcwd())) === getcwd()) {
 <html>
     <head>
         <title><?=dispname($path[0])?> &ndash; Notebook</title>
+<?
+    if ($author) {
+?>
+        <meta name="author" content="<?=$author?>">
+<?
+    }
+    if ($path[1] === "source") {
+?>
+        <meta name="robots" content="noindex">
+<?
+    }
+?>
         <link rel="stylesheet" href="res/css/style.css">
     </head>
     <body>
-        <footer>Random ramblings of a socially awkward CompSci, presented by <a href="/">Ollie Terrance</a>.</footer>
         <div id="side">
             <div></div>
             <a href="index"<?=($path[0] === "index" ? " class=\"current\"" : "")?>>Index</a>
@@ -60,6 +74,7 @@ if ($loc && substr($loc, 0, strlen(getcwd())) === getcwd()) {
 ?>
             <?=$content?>
         </div>
+        <footer><?=$footer?></footer>
         <script src="/res/js/analytics.js"></script>
     </body>
 </html>

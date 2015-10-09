@@ -5,7 +5,7 @@ $pd = new Parsedown();
 function dispname($file) {
     return preg_replace("/-/", " ", ucwords($file));
 }
-$path = explode("?", substr($_SERVER["REQUEST_URI"], 7));
+$path = explode("?", end(explode("/", $_SERVER["REQUEST_URI"])));
 // default to index page
 if (!$path[0]) return header("Location: index");
 if (count($path) === 1)  $path[1] = "";

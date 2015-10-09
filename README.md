@@ -15,13 +15,13 @@ Add your notes to the directory accessible on your site.  Copy or symlink to `no
 Configuring all requests to go to the same script will vary by server software.  Example for `/notes/` with nginx:
 
 ```
-location ~ ^/notes/notes.php$ {
+location /notes/notes.php$ {
     # enable PHP FastCGI
 }
-location ~ ^/notes/res/ {
+location /notes/res/ {
     # noop (handle normally)
 }
-location ~ ^/notes/ {
+location /notes/ {
     # redirect to notes.php
     rewrite .* /notes/notes.php last;
 }
